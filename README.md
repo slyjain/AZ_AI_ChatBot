@@ -104,6 +104,7 @@ The `content.js` script serves as the brain of the extension:
 ### Videos
 - **Dynamic Page Interaction**: Demonstrates the extension's ability to adapt to page changes.
 - **Contextual AI Responses**: Showcases AI-generated answers tailored to problem descriptions.
+[![Video Title](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=jci91YyCgGQ)
 
 *Insert images and video links here.*
 

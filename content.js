@@ -250,13 +250,16 @@ The following is the user code: `;
 
                 // Add problem context to the first user message
                 if (chatHistory.length === 0) {
+                    const userCode = getCodeKey();
+
                     const userPrompt = promptBegin + `
                 Problem Description:${JSON.stringify(xhrHintsAndSolution.data.body)}
                 Hints:${JSON.stringify(xhrHintsAndSolution.data.hints)}
                 Editorial_Code:${JSON.stringify(xhrHintsAndSolution.data.editorial_code)}
                 Sample Inputs:${JSON.stringify(xhrHintsAndSolution.data.samples.input)}
                 Sample Outputs:${JSON.stringify(xhrHintsAndSolution.data.samples.output)}
-                Constraints:${JSON.stringify(xhrHintsAndSolution.data.constraints)}`;
+                Constraints:${JSON.stringify(xhrHintsAndSolution.data.constraints)}
+                Current Code:${userCode}`;
 
                     // Push the first user message with context
                     chatHistory.push({ role: "user", parts: [{ text: userPrompt + `this is my 1st message` + userMessage }] });
@@ -280,7 +283,6 @@ The following is the user code: `;
                     }
 
                     try {
-                        const userCode = getCodeKey();
 
                         // Prepare the request body with content structured in the required format
                         const requestBody = {
